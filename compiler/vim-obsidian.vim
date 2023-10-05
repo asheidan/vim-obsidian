@@ -5,7 +5,7 @@ endif
 
 let current_compiler = "vim-obsidian"
 
-CompilerSet errorformat=%+P#\ %f,%m,%Q
+CompilerSet errorformat=%+P#\ %f,%l:%m,%Q
 " TODO: Use the quickfix-directory-stack to list backlinks in Dailies
 " TODO: Use lmake to populate backlinks
 
