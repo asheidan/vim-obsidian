@@ -2,7 +2,7 @@
 " Description: A plugin to mimic some behaviours of Obsidian
 
 
-if exists("g:loaded_vim_obsidian")
+if exists("g:loaded_obsidian")
 	finish
 endif
-let g:loaded_vim_obsidian = 1
+let g:loaded_obsidian = 1
