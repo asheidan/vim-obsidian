@@ -9,9 +9,24 @@ function! BacklinksFormat()
 	syn match	qfLineNr	"[^|]*" contained contains=qfError conceal
 	syn match	qfError		"error" contained
 
-	"setlocal conceallevel=2
+	setlocal conceallevel=2
 	setlocal concealcursor=nvic
-	setlocal wrap
+
+	"syn region markdownH1 matchgroup=markdownH1Delimiter start=" #\s.*" end="#*\s*$" keepend oneline
+	syn region markdownH1 matchgroup=markdownH1Delimiter start=" #\s" end="#*\s*$" keepend oneline
+	syn region markdownH2 matchgroup=markdownH2Delimiter start=" ##\s" end="#*\s*$" keepend oneline
+	syn region markdownH3 matchgroup=markdownH3Delimiter start=" ###\s" end="#*\s*$" keepend oneline
+	syn region markdownH4 matchgroup=markdownH4Delimiter start=" ####\s" end="#*\s*$" keepend oneline
+	syn region markdownH5 matchgroup=markdownH5Delimiter start=" #####\s" end="#*\s*$" keepend oneline
+	syn region markdownH6 matchgroup=markdownH6Delimiter start=" ######\s" end="#*\s*$" keepend oneline
+
+	hi def link markdownH1Delimiter           markdownHeadingDelimiter
+	hi def link markdownH2Delimiter           markdownHeadingDelimiter
+	hi def link markdownH3Delimiter           markdownHeadingDelimiter
+	hi def link markdownH4Delimiter           markdownHeadingDelimiter
+	hi def link markdownH5Delimiter           markdownHeadingDelimiter
+	hi def link markdownH6Delimiter           markdownHeadingDelimiter
+	hi def link markdownHeadingDelimiter      Delimiter
 
 endfunction
 command BacklinksFormat call BacklinksFormat()
