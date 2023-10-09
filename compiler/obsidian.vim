@@ -9,4 +9,4 @@ CompilerSet errorformat=%+P#\ %f,%l:%m,%Q
 " TODO: Use the quickfix-directory-stack to list backlinks in Dailies
 " TODO: Use lmake to populate backlinks
 
-CompilerSet makeprg=~/Documents/Projects/vim-roam/filter.py
+execute 'CompilerSet' 'makeprg=' . g:obsidian_filter_path
